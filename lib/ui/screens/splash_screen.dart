@@ -15,18 +15,21 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState(){
     super.initState();
-    navigateToLogin();
+    Future.delayed(const Duration(seconds: 3)).then((_)=>{
+      navigateToLogin()
+    });
+
   }
 
 
   void navigateToLogin(){
-    Future.delayed(const Duration(seconds: 3)).then((_){
+
       Navigator.pushAndRemoveUntil(
         context,
         MaterialPageRoute(builder: (context) => const  LoginScren()),
             (route) => false,
       );
-    });
+
   }
 
  @override
