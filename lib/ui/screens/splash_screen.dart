@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:task_managementt/ui/screens/login_screens.dart';
 import 'package:task_managementt/ui/utils/assets_utils.dart';
-import 'package:task_managementt/ui/widgets/screen_background.dart';
+
+import 'login_screens.dart';
+
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -15,20 +16,22 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState(){
     super.initState();
-    Future.delayed(const Duration(seconds: 3)).then((_)=>{
-      navigateToLogin()
-    });
 
+
+    navigateToLogin();
   }
 
 
   void navigateToLogin(){
 
+    Future.delayed(const Duration(seconds: 3)).then((_)=>{
+
       Navigator.pushAndRemoveUntil(
         context,
-        MaterialPageRoute(builder: (context) => const  LoginScren()),
+        MaterialPageRoute(builder: (context) => const   LoginScreen()),
             (route) => false,
-      );
+      )
+    });
 
   }
 
